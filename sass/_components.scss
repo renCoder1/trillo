@@ -1,0 +1,968 @@
+
+
+// HEADER
+
+.header{
+display:flex; 
+justify-content: space-between;
+align-items: center;
+
+@media only screen and (max-width:$bp-smallest){
+  
+  flex-direction: column;
+  height:18rem;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+//LOGO
+.logo{
+    height: 4rem;
+    //width:1.5rem;
+    margin-left: 2rem;
+    @media only screen and (max-width:$bp-smallest){
+      margin-left:0;
+      margin-top: 3rem;
+    }
+    }
+
+//SEARCH
+.search{
+
+flex:0 0 40%;
+display: flex;
+align-items: center;
+justify-content: center;
+//justify content along main axis
+//dont grow dont shrink width40%
+   
+@media only screen and (max-width:$bp-smallest){
+  flex:1;
+  width:80%;
+}
+   
+ &__input{
+ font-family: inherit;
+ font-size: 1.4rem;
+ background-color: var(--color-grey-light-2); 
+ border: none;
+ padding:.7rem 2rem;
+ border-radius:100px;
+ text-align: center;
+ width:90%;
+ transition: all .2s;
+ margin-right: -3.5rem;
+ //as input doesn't inherit from global so need to specify
+ 
+ &:focus{
+  outline: none; //blue default outline
+  width:100%;
+  background-color: var(--color-grey-light-3); 
+ }
+  &::-webkit-input-placeholder{
+    font-weight: 100;
+    color: var(--color-grey-light-4);
+  }
+ }
+
+ &__input:focus + &__button{
+   //adjacent selector or selector next to input
+   background-color: var(--color-grey-light-3); 
+ }
+ &__button{
+border: none;
+background-color: var(--color-grey-light-2);
+ 
+  &:focus{
+    outline: none;
+   
+
+  }
+
+  &:active{
+    transform: translateY(2px);
+  }
+ }
+ &__icon{
+  height: 2rem;
+  width: 2rem;
+  fill:var(--color-grey-dark-3);
+ }
+}
+
+.user-nav{
+
+  // background-color: greenyellow;
+  display:flex;
+  align-items: center; 
+  align-self: stretch;
+    
+  position: relative;//for clicks positioning
+  @media only screen and (max-width:$bp-smallest){
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  & > *{
+  
+  //user-nav all direct children
+  padding:0 2rem;
+  height:100%; 
+  //so that all goes grey on selection
+   display: flex;
+   align-items: center;
+ 
+
+  cursor: pointer;
+      &:hover{
+        background-color: var(--color-grey-light-2);
+      }
+  } 
+
+   &__icon-box{
+    position: relative;
+
+  }
+
+  &__icon{
+    height: 2.4rem;
+    width: 2.4rem;
+    fill: var(--color-grey-dark-2);
+    
+  }
+
+  &__notification{
+   font-size: 0.7rem;
+   width: 1.75rem;
+   width:1.75rem;
+   border-radius:50%;
+   background-color: var(--color-primary);
+   position: absolute;
+    top:0.4rem;
+    right: 1rem;
+    color: #fff;
+   //text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  //  &:hover + .notification-clicked{
+  //   display: block;
+    
+  // }
+  }
+   
+  
+  &__user:hover{
+    
+    .user-clicked{
+    display: block;
+    }
+
+    .user-nav__photo{
+      transform: scale(1.1);
+      border:3px solid var(--color-primary-light);
+      box-sizing: content-box;
+      padding:0.2rem;
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__photo{
+    height: 4rem;
+    width:4rem;
+    border-radius: 100%;
+    transition: all .8s;
+  }
+  &__name{
+   padding-left: 0.5rem;
+   font-size: 1.5rem;
+  }
+
+  
+}
+
+//////////////////////////////
+//USER clicks
+
+//home clicked
+
+// .home-clicked{
+//   height: 80rem;
+//   background-image:radial-gradient(var(--color-grey-light-1),var(--color-grey-light-3)); 
+//   display:none;
+   
+//   position: relative; //to support positioning of home click
+//    &__img{
+//     position: absolute;
+//     top:24%;
+//     left:50%;
+//     transform: translate(-50%);
+//     width:20rem;
+//     height:20rem;
+//     border-radius:50%;
+
+//    }
+//    &__text{
+//     position: absolute;
+//     top:54%;
+//     left:50%;
+//     transform: translate(-50%);
+//     font-size: 3rem;
+//     font-weight: 300;
+//     color:var(--color-primary);
+    
+
+
+//    }
+// }
+.notification-click:hover .notification-clicked{
+    display: block;
+    
+}
+.user-clicked{
+  
+  position: absolute;
+  top: 6rem;
+  left:.4rem;
+  display: none;
+  //display:flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
+  background-color: var(--color-grey-dark-1);
+  width: 100%;
+  
+  padding:0.5rem 2rem;
+ z-index:30;
+
+ 
+  @media only screen and (max-width:$bp-small){
+    top: 4rem;
+    left:50%;
+    transform: translate(-50%);
+    padding:0.2rem 2rem;
+
+  }
+  &__link{
+  
+    display:flex;
+  }
+  &__list{
+  list-style: none;
+  color: #fff;
+  font-size:1.4rem;
+      &:first-child{
+        padding-top: 2rem;
+      }
+  }
+  &__item{
+    margin-bottom: 2rem;
+
+    
+    
+     
+  }
+
+  &__item:not(last-child){
+
+    @media only screen and (max-width:$bp-small){
+      margin-bottom: 2rem;
+    }
+   
+  }
+
+  &__icon{
+    width: 1.75rem;
+     height: 1.75rem;
+     margin-right: 1rem;
+     fill: var(--color-primary);
+  }
+}
+
+/////////////////
+//notification clicked
+.notification-clicked{
+
+  background-color: var(--color-grey-light-1);
+  font-size: 1.4rem;
+  position: absolute;
+  top:6rem;
+  left:-21rem;
+  padding:2rem;
+  height:25vh;
+  width:27vw;
+  overflow-y: scroll;
+  display: none;
+  z-index: 30;
+
+  @media only screen and (max-width:$bp-small) {
+    width:50vw;
+    height:40.5vh;
+    top:4rem;
+  left:50%;
+  transform: translate(-50%);
+  }
+
+  &__list{
+  list-style: none;
+  }
+
+  &__item{
+ margin-bottom: 2rem;
+
+  }
+
+  &__link{
+    display: flex;  display: flex;
+  }
+
+  &__img{
+    height: 2.5rem;
+    widows: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1.2rem;
+    }
+
+  &__text{
+    
+    flex:1;
+  }
+}
+//////////////////////////////////////////////////////
+//SIDEBAR
+
+
+.side-nav{
+  // display: flex;
+  // flex-direction: column;
+  // align-items:center;
+  // align-content: space-between;
+  margin:2rem auto;
+  font-size: 1.35rem;
+
+  @media only screen and (max-width:$bp-medium){
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+     
+  }  
+  
+ 
+  &__item{
+   list-style: none;
+   position:relative;
+
+   @media only screen and (max-width:$bp-medium){
+    flex: 1;
+   }
+   
+   &:not(:last-child){
+     margin-bottom: 0.5rem;
+
+     @media only screen and (max-width:$bp-medium){
+      margin-bottom:0;
+     }
+   }
+  }
+
+  &__item::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left: 0;
+    height:100%;
+    width:3px;
+    background-color: var(--color-primary);
+    transform:scaleY(0);
+    // transform-origin: bottom;
+
+    transition: transform 1s,
+                 width .4s cubic-bezier(1,0,0,1) .2s,
+                 background-color .1s;
+    
+    
+
+    
+  }
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width:100%;
+    
+
+
+  }
+
+  &__item:active::before{
+    background-color: var(--color-primary-light);
+  }
+  &__icon{
+   height: 1.75rem;
+   width:1.75rem;
+   fill:currentColor;
+   margin-right: 2rem;
+     
+   @media only screen and (max-width:$bp-medium){
+    margin-right: 0;
+   }
+  }
+
+  &__link{   
+    @media only screen and (max-width:$bp-medium){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    }
+    @media only screen and (max-width:$bp-smallest){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      }
+  }
+   
+  &__link:link,
+  &__link:visited{
+    color:var(--color-grey-light-1);
+    text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 1.5rem 6.2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+    z-index: 10;
+    &:hover{
+    //color:var(--color-primary);
+    }
+     
+    @media only screen and (max-width:$bp-largest){
+      padding:1.5rem 5rem;
+    } 
+
+    @media only screen and (max-width:$bp-medium){
+      padding:1.4rem 4rem;
+    } 
+    @media only screen and (max-width:$bp-smallest){
+      padding:1rem;
+    }   
+  }
+  
+   
+}
+
+.copyright{
+font-size: 1rem;
+text-align: center;
+padding:2.5rem;
+color:var(--color-grey-light-4);
+
+  @media only screen and (max-width:$bp-medium){
+  display: none;
+  
+
+  //opacity:0; space is blank
+  //visibility:hidden; space is there
+  }  
+ 
+}
+
+////////////////////////////////////////////////////////////
+
+// MAIN
+/////////////////////////////////////////////////////////////
+
+.gallery{
+  display: flex;
+ 
+  @media only screen and (max-width:$bp-mobile){
+  flex-direction: column;
+  }
+
+  &__item{
+
+  }
+
+  &__img{
+   width:100%;
+   display: block;
+   transition: all 1s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+////////////////////////////////////////////////////////////////
+//heading
+
+.overview{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+  //var(--color-grey-light-2);
+  //padding: 2rem 2rem;
+  @media only screen and (max-width:$bp-mobile){
+    flex-direction: column;
+   
+   
+   }
+  &__heading{
+   font-weight: 100;
+   font-size: 2.25rem;
+   text-transform: uppercase;
+   letter-spacing:1px;
+   padding: 1.5rem 3rem;
+
+   @media only screen and (max-width:$bp-smallest){
+    font-size: 1.8rem;
+    padding: 1.5rem;
+  }
+
+  }
+  &__stars{
+   margin-right: auto;
+   display: flex;
+   @media only screen and (max-width:$bp-mobile){
+   margin:0 auto;
+   padding-bottom: 1.5rem;
+   
+   
+   }
+  }
+
+  &__icon-star,
+  &__icon-location{
+    height: 1.75rem;
+    width:1.75rem; //prefer square
+    fill: var(--color-primary);
+  } 
+
+  &__icon-location{
+    margin-right:0.8rem;
+   
+
+  }
+
+  &__location{
+   font-size: 1.2rem;
+   display: flex;
+   align-items: center;
+   @media only screen and (max-width:$bp-mobile){
+    padding-bottom: 1.5rem;
+   }
+
+ 
+  }
+ 
+  
+  &__rating{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items:center;
+   z-index: 10;
+   
+   background-color: var(--color-primary);
+   color:var(--color-grey-light-2);
+   margin-left: 2.5rem;
+   align-self: stretch;
+  padding:0 2.25rem;
+
+  @media only screen and (max-width:$bp-mobile){
+    padding:1.5rem;
+    margin-left: 0;
+   }
+   
+  }
+  
+  &__rating-avg{
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin-bottom:4px;
+  @media only screen and (max-width:$bp-mobile){
+    margin-bottom:10px;
+   }
+  }
+
+  &__rating-votes{
+   font-size: 0.8rem;
+   text-transform: uppercase;
+   @media only screen and (max-width:$bp-mobile){
+    font-size: 1rem;
+   }
+  }
+}
+/////location BUTTON pulsating
+
+.btn-inline{
+  border: none;
+  border-bottom: 1px solid currentColor;
+  // padding: 1rem 2rem;
+  color: var(--color-primary);
+  background-color: transparent;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: all .2s;
+  display: inline-block;
+
+
+  &:hover{
+   color: var(--color-grey-dark-1);
+  }
+
+ //click and keyboard tab
+  &:focus{
+  outline: none;
+  animation:pulsate 0.8s infinite;
+  }
+}
+
+@keyframes pulsate{
+  0%{
+  transform:scale(1);
+  box-shadow:none;
+  }
+  50%{
+   transform: scale(1.1 );
+   box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+  }
+  100%{
+   transform:scale(1);
+   box-shadow:none;
+  }
+}
+
+///////////////////////////////
+//Hotel detail
+.detail{
+display:flex;
+padding: 4rem;
+background-color: var(--color-grey-light-1);
+border-bottom: var(--line);
+
+  @media only screen and (max-width:$bp-small){
+   flex-direction: column;
+   padding:0rem;
+  }
+}
+
+.description{
+background-color: #fff;
+box-shadow: 0 2rem 5rem rgba(0,0,0,.25);
+padding: 3rem;
+flex: 0 0 60%;
+//1. have 60% of width
+font-size: 1.4rem;
+//font-weight: 300;
+     
+margin-right: 4rem;
+@media only screen and (max-width:$bp-small){
+  margin-right: 0rem;
+  margin-bottom: 3rem;
+  //flex: 0 0 100%;
+   
+ }
+  &__text:not(:last-child){
+  margin-bottom: 2rem;
+  }
+
+  &__list{
+   list-style: none;
+   margin: 3rem 0;
+   padding: 3rem 0;
+   border-top: var(--line);
+   border-bottom: var(--line);
+
+   display: flex;
+   flex-wrap: wrap;
+
+   @media only screen and (max-width:$bp-mobile){
+    flex-direction: column;
+    flex-wrap: nowrap;
+    //padding-left:30%;
+
+    
+   }
+  }
+  &__list-item{
+    flex:0 0 50%; //so two in each line as 50% of flex container height
+    margin-bottom: 0.7rem; 
+
+    @media only screen and (max-width:$bp-mobile){
+     flex:0 0 100%;
+
+    }
+  }
+  &__list-item::before{
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right:0.7rem;
+
+    //old browser but wont show colored sign
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
+    
+    
+    //for new browser use mask property
+  
+    @supports (-webkit-mask-image: url()) or (mask-image: url()){
+      background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size:cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size:cover;    
+
+     //wont work unless remove background-image as it is also applied
+     background-image: none;
+    }
+    
+    //fill: 
+    //older browser as using background-img we cant change color of arrow
+    //background-image: url(../img/chevron-thin-right.svg);
+    //background-size: cover;
+    
+  }
+}
+
+  
+.recommend{
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  &__para{
+   margin-right: auto;
+   @media only screen and (max-width:$bp-large){
+    //margin-right: auto;
+  }
+
+  }
+  &__ppl{
+  display: flex;
+  }
+
+  &__ppl-img{
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid #fff;
+  box-sizing: content-box;   
+  transition: all .5s;
+   &:hover{
+   transform: scale(1.3);
+   margin-right:-1.5rem; //give little moving effect
+   }
+
+  &:not(:last-child){
+    margin-right:-1.5rem;
+
+    @media only screen and (max-width:$bp-large){
+      margin-right:-2rem;
+    }  
+  }
+  
+  
+  }
+}
+////////////////////////////////////////////////////////////////
+//USER-REVIEWS
+
+.user-reviews {
+//background-color:var(--color-grey-light-1);
+//box-shadow: var(--box-shadow-dark);
+font-size: 1.4rem;
+flex: 1; //2.take rest of space 
+//margin-bottom: 4rem;
+
+//padding:3rem; 
+
+   &__btn{
+    margin:2rem auto;
+    display:flex;
+   
+    //justify-content:center;
+    font-size:1.4rem;
+     transition: all .2s;
+
+    & span{
+    margin-left:3px;
+    transition:margin-left .2s;
+    
+    }
+
+    &:hover{
+      color:var(--color-grey-dark-1);
+      span{
+        margin-left:8px;
+      }
+    }
+  }
+}
+
+  .user-review{
+    background-color: #fff;
+    padding:3rem; 
+    margin-bottom:3rem;
+    box-shadow: var(--box-shadow-dark);
+    position:relative;
+    overflow:hidden;
+    &::before{
+      content:"\201C";
+      position:absolute;
+      top:-3rem;
+      left:-1rem;
+      font-size:20rem;
+      font-family:sans-serif;
+      line-height:1;
+      color:var(--color-grey-light-2);
+      z-index:1;
+      
+
+     @media only screen and (max-width:$bp-smallest){
+      margin-bottom:1rem;
+      padding-bottom: 1rem;
+     }
+     
+
+      //we need that quotation here html entities table csst
+      //csstricks
+      //glyphs
+      //iso number use in css
+
+      //display:block;
+    }
+    & > p {
+      z-index:10;
+      position:relative;
+    }
+   }
+
+   .reviewer{
+    display:flex;
+    padding-top:4rem;
+
+    &__img{
+     height:4.5rem;
+     width:4.5rem;
+     border-radius:100%;
+     margin-right:1.6rem;
+    //transition: all .4s;
+    transition: scale .2s linear,
+               border .6s;
+     &:hover{
+      box-sizing: content-box;
+       border: 2px dotted var(--color-primary-light);
+      transform: scale(1.3);
+      
+     }
+    }
+
+   
+    &__text{
+        margin-right:auto;
+        display:flex;
+        flex-direction:column;
+
+
+        &-1{
+        text-transform:uppercase;
+        font-weight:600;
+        margin-bottom:.4rem;
+        font-size:1.1rem;
+        
+        
+        }
+        &-2{
+        font-size:1rem;
+        color:var(--color-grey-dark-3);
+        }
+    }
+    &__rating{
+     color:var(--color-primary);
+     font-size:2.2rem;
+
+    }
+   }
+   
+   ///////////////////////////////////////////////////////////////////////
+  .cta{
+    text-align: center;
+    padding:3rem 0;
+    
+    @media only screen and (max-width:$bp-smallest) {
+      padding:4rem 0;
+    }
+    &__heading{
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    }
+    
+    
+  }
+
+  .btn{
+    font-size:1.5rem;
+    font-weight: 300;
+   border-radius: 10rem;
+  
+   box-shadow: var(--box-shadow-dark);
+   text-transform: uppercase;
+   color:#fff;
+   background-image: linear-gradient(to right,var(--color-primary-light),var(--color-primary-dark));
+   cursor: pointer;
+   border: none;
+  position: relative;
+  overflow: hidden; //to hide whatever is outsid ethe element
+   & > *{
+    display: inline-block;
+    height:100%; //of parent 
+     width:100%;
+     transition: all .2s;
+   }
+   &__visible{
+    
+     //so that padding can work
+    padding:2rem 7.5rem;
+    
+  }
+
+   &__invisible{
+    
+     position: absolute;
+     top:-100%; //if element is 50px then 100% of that is 50px
+     left:0;
+    
+    padding:2rem;
+    
+//display: none;
+  }
+  &:hover{
+    background-image: linear-gradient(to right,var(--color-primary-dark),var(--color-primary-light));
+
+  }
+
+  &:focus{
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+  &:hover &__invisible{
+   
+    top:0;
+  }
+
+  &:hover &__visible{
+ transform: translateY(-100%);
+ 
+  }
+
+  
+}
+
+  

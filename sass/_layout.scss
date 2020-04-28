@@ -1,0 +1,56 @@
+
+.container{
+max-width:120rem;
+min-height:40rem;
+margin: 8rem auto;
+background-color: var(--color-grey-light-1);
+box-shadow: var(--box-shadow-dark);
+
+@media only screen and (max-width:$bp-largest){
+    margin:0;
+}
+@media only screen and (max-width:$bp-large){
+    // width:100%;
+    max-width:100%;
+}
+}
+
+.header{
+height:6rem;
+border-bottom: 1px var(--color-grey-light-1);
+
+ //default value of order is 0 for flex items
+ //if set search of order to 1 it will move to all the way to end
+ //now to move it down
+ //flex-wrap: wrap of container  so if no space wrap into new line so go down if no space
+ //but it happens later when no space but to make it happen at specific width just make it wider so space constraint will happen sooner and it will go around flex: 0 0 100%;
+
+}
+
+.content{
+    display: flex;
+    @media only screen and (max-width:$bp-medium){
+        flex-direction: column; //makes one 
+       // below another
+    }
+}
+
+.sidebar{
+background-color:var(--color-grey-dark-1);
+//width:8rem;
+flex: 0 0 20%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+ 
+ 
+}
+
+.main{
+  
+//height: 80rem; //fortimebeing
+//background-color:
+flex:1;
+
+}

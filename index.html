@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>trillo &mdash; Your all-in-one booking app</title>
+    </head>
+    <body>
+       <div class="container">
+        <header class="header">
+        
+            <img src="img/logo.png" alt="Trillo logo" class="logo">
+            <form action="#" class="search">
+               <input type="text" class="search__input" placeholder="search hotels">
+               <button class="search__button">
+                    <svg class="search__icon">
+                    <use xlink:href="img/sprite.svg#icon-search"></use>
+                   </svg>
+               </button>
+            </form>
+            <nav class="user-nav">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon">
+                       <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                    </svg>
+                    <span class="user-nav__notification">7</span>
+
+                </div>
+                <div class="user-nav__icon-box notification-click">
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-chat"></use>
+                    </svg>
+                    <span class="user-nav__notification">13</span>
+                    <div class="notification-clicked">
+                            <ul class="notification-clicked__list">
+                                <li class="notification-clicked__item">
+                                    <a class="notification-clicked__link">
+                                    <img src="img/user-5.jpg" alt="user" class="notification-clicked__img">
+                                    <p class="notification-clicked__text">Kyra and two other visited San Diago Panorma Hotel</p>
+                                    </a>
+                                </li>
+                                <li class="notification-clicked__item">
+                                        <a class="notification-clicked__link">
+                                                <img src="img/user-2.jpg" alt="user" class="notification-clicked__img">
+                                        <p class="notification-clicked__text">Jessica checked into Cairo Lux resorts</p>
+                                    </a>
+                                </li>
+                                <li class="notification-clicked__item">
+                                        <a class="notification-clicked__link">
+                                                <img src="img/user-3.jpg" alt="user" class="notification-clicked__img">
+                                        <p class="notification-clicked__text">Tim visited Aloha residency in Hawaii</p>
+                                        </a>
+                                </li>
+                                
+                                <li class="notification-clicked__item">
+                                        <a class="notification-clicked__link">
+                                                <img src="img/user-4.jpg" alt="user" class="notification-clicked__img">
+                                        <p class="notification-clicked__text">Prezeil rented an amazing SUV for roadtrip to Highway 101</p>
+                                        </a>
+                                </li>
+                                <li class="notification-clicked__item">
+                                        <a class="notification-clicked__link">
+                                                <img src="img/user-3.jpg" alt="user" class="notification-clicked__img">
+                                        <p class="notification-clicked__text">Mark just viewed a hotel in New York</p>
+                                        </a>
+                                </li>
+                                <li class="notification-clicked__item">
+                                        <a class="notification-clicked__link">
+                                                <img src="img/user-1.jpg" alt="user" class="notification-clicked__img">
+                                        <p class="notification-clicked__text"> Jordan booked a flight to Cuba</p>
+                                        </a>
+                                </li>
+        
+                            </ul>
+                        </div>
+                </div>
+                <div class="user-nav__user">
+                    <img src="img/usr.jpg" alt="User image" class="user-nav__photo">
+                    <span class="user-nav__name">Ren</span>
+
+                    <div class="user-clicked">
+                            <ul class="user-clicked__list">
+                                <li class="user-clicked__item">
+                                    <a class="user-clicked__link">
+                                    <svg class="user-clicked__icon">
+                                        <use xlink:href="img/symbol.svg#icon-cog">
+                                        </use>
+                                    </svg>
+                                    <p>Settings</p>
+                                    </a>
+                                </li>
+                                <li class="user-clicked__item">
+                                        <a class="user-clicked__link">
+                                        <svg class="user-clicked__icon">
+                                            <use xlink:href="img/symbol.svg#icon-heart"></use>
+                                            
+                                        </svg>
+                                        <p>Favourite</p>
+                                    </a>
+                                </li>
+                                <li class="user-clicked__item">
+                                        <a class="user-clicked__link">
+                                        <svg class="user-clicked__icon">
+                                            <use xlink:href="img/symbol.svg#icon-facebook"></use>
+                                           
+                                        </svg>
+                                        <p>Connect through Facebook</p>
+                                        </a>
+                                </li>
+                                <li class="user-clicked__item">
+                                        <a class="user-clicked__link">
+                                        <svg class="user-clicked__icon">
+                                            <use xlink:href="img/symbol.svg#icon-upload2"></use>
+                                           
+                                        </svg>
+                                        <p>Logout</p>
+                                        </a>
+                                </li>
+        
+                            </ul>
+                        </div>
+                </div>
+                
+            </nav>
+        </header>
+        <div class="content">
+            <nav class="sidebar">
+                <ul class="side-nav">
+                    <li class="side-nav__item side-nav__item--active">
+                        <a href="#" class="side-nav__link">
+                        <svg class="side-nav__icon">
+                            <use xlink:href="img/sprite.svg#icon-home"></use>
+                        </svg>
+                       <p class="side-nav__icon-text">Hotel</p>
+                        </a>
+                    </li>
+                    <li class="side-nav__item sidebar-click">
+                        <a href="#" class="side-nav__link">
+                        <svg class="side-nav__icon">
+                         <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
+                        </svg>
+                        <p>Flight</p>
+                    </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                        <svg class="side-nav__icon">
+                            <use xlink:href="img/sprite.svg#icon-key"></use>
+                        </svg>
+                        <p>Car Rental</p>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                            <a href="#" class="side-nav__link">
+                               <svg class="side-nav__icon">
+                                   <use xlink:href="img/sprite.svg#icon-map2"></use>
+                               </svg>  
+                               <p>Tours</p>
+                            <a>
+                    </li>
+                </ul>
+                <div class="copyright">&copy 2019 Trillo. The website is made by me but design is not my idea.</div>
+            </nav>
+            <div class="main">
+                <!-- <div class="home-clicked" id="dash">
+                    <img src="img/usr.jpg" alt="welcome-user-image" class="home-clicked__img">
+                    <p class="home-clicked__text">Welcome to home!</p>
+                </div> -->
+
+                <div class="gallery">
+                    <figure class="gallery__item">
+                        <img src="img/hotel-1.jpg" alt="Hotel 1" class="gallery__img">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="img/hotel-2.jpg" alt="Hotel 2" class="gallery__img">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="img/hotel-3.jpg" alt="Hotel 3" class="gallery__img">
+                    </figure>
+                </div>
+                <div class="overview">
+                    <h1 class="overview__heading">Hotel Las Palmas</h1>
+                    <div class="overview__stars">
+                        
+                            <svg class="overview__icon-star"><use xlink:href="img/sprite.svg#icon-star-full"></use>
+                            </svg>
+                            <svg class="overview__icon-star"><use xlink:href="img/sprite.svg#icon-star-full"></use>
+                            </svg>
+                            <svg class="overview__icon-star"><use xlink:href="img/sprite.svg#icon-star-full"></use>
+                            </svg>
+                            <svg class="overview__icon-star"><use xlink:href="img/sprite.svg#icon-star-full"></use>
+                            </svg>
+
+                    </div>
+                    <div class="overview__location">
+                        <svg class="overview__icon-location"><use xlink:href="img/sprite.svg#icon-location-pin"></use></svg>
+                        <button class="btn-inline">Albufeira, Portugal</button>
+                    </div>
+                    <div class="overview__rating">
+                        <div class="overview__rating-avg">
+                            8.6
+                        </div>
+                        <div class="overview__rating-votes">426 votes</div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="description">
+                      <p class="description__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.
+                      </p>
+                      <p class=description__text">
+                            Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure aliquid aliquam.
+                      </p>
+                      <ul class="description__list">
+                          <li class="description__list-item">Close to the beach</li>
+                            <li class="description__list-item">Breakfast included</li>
+                            <li class="description__list-item">Free airport shuttle</li>
+                            <li class="description__list-item">Free wifi in all rooms</li>
+                            <li class="description__list-item">Air conditioning and heating</li>
+                            <li class="description__list-item">Pets allowed</li>
+                            <li class="description__list-item">We speak all languages</li>
+                            <li class="description__list-item">Perfect for families</li>
+                      </ul>
+                      <div class="recommend">
+                          <p class="recommend__para">
+                                Lucy and 3 other friends recommend this hotel.
+                          </p>
+                          <div class="recommend__ppl">
+                              <img src="img/user-5.jpg" class="recommend__ppl-img" alt="user 1">
+                              <img src="img/user-3.jpg" class="recommend__ppl-img" alt="user 3">
+                              <img src="img/user-4.jpg" class="recommend__ppl-img" alt="user 4">
+                              <img src="img/user-6.jpg" class="recommend__ppl-img" alt="user 2">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="user-reviews">
+                        <div class="user-review">
+                                <p class="x">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                                </p>
+                                <div class="reviewer">
+                                <img src="img/user-1.jpg" class="reviewer__img" alt="review image 1"></img>
+                                <div class="reviewer__text">
+                                    <span class="reviewer__text-1">Nick Smith</span>
+                                    <span class="reviewer__text-2">Feb 19th, 2017</span>
+                                </div>
+                                <p class="reviewer__rating">7.3</p>
+                                </div>
+            
+                        </div>
+                        <div class="user-review">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi.
+                            </p>
+                            <div class="reviewer">
+                                    <img src="img/user-2.jpg" class="reviewer__img" alt="review image 1"></img>
+                                    <div class="reviewer__text">
+                                        <span class="reviewer__text-1">Mary Thomas</span>
+                                        <span class="reviewer__text-2">April 6th, 2017</span>
+                                    </div>
+                                    <p class="reviewer__rating">9.1</p>
+                            </div>
+                            
+                        </div>
+                        <button class="btn-inline user-reviews__btn">Show all<span>&rarr;</span></button>
+                    </div>
+
+                   
+                </div>
+                <div class="cta">
+                    <h1 class="cta__heading">Good news! We have 4 free rooms for your selected date!</h1>
+                    <button class="btn">
+                        <span class="btn__visible">Book now!</span>
+                        <soan class="btn__invisible">Only 4 rooms left!</soan>
+
+                    </button>
+                </div> 
+            </div>  
+            
+            
+        </div>
+       </div>
+    </body>
+</html>
